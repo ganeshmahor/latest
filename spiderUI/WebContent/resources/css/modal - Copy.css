@@ -1,0 +1,262 @@
+/**
+Modal css
+**/
+
+body {
+  font-family: sans-serif;
+  background-color: #1d1f20;
+}
+.modal-open {
+  padding: 10px 0;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-open:before, .modal-open:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  transition: width 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal-open:before {
+  width: 100%;
+  background-color: #9d9d9d;
+}
+.modal-open:after {
+  width: 0;
+  background-color: #505050;
+}
+.modal-open:hover:after {
+  width: calc(100% + 1px);
+}
+.modal-box {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 2px;
+  color: #fff;
+  background-color: #505050;
+  background: rgba(0, 0, 0, 0.6);
+  transition: width 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1), left 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1), height 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), top 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal-box.is-open {
+  transition: width 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), left 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), height 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1), top 400ms 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal-box.is-open li {
+  opacity: 1;
+}
+.modal-box.is-open .modal-close {
+  opacity: 1;
+  transition: all 500ms 700ms;
+}
+.modal-box ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 30px;
+  list-style-type: none;
+  transform: translate(-50%, -50%);
+}
+.modal-box li {
+  position: relative;
+  margin: 20px 0;
+  text-align: center;
+  opacity: 0;
+  transition: all 200ms;
+}
+.modal-box a {
+  position: relative;
+  font-weight: 300;
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.modal-box a:before, .modal-box a:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  transition: width 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal-box a:after {
+  width: 0;
+  background-color: #fff;
+}
+.modal-box a:hover:after {
+  width: 100%;
+}
+.modal-box.is-open li:nth-child(1) {
+  transition: all 500ms 575ms;
+}
+.modal-box.is-open li:nth-child(2) {
+  transition: all 500ms 650ms;
+}
+.modal-box.is-open li:nth-child(3) {
+  transition: all 500ms 725ms;
+}
+.modal-box.is-open li:nth-child(4) {
+  transition: all 500ms 800ms;
+}
+.modal-box.is-open li:nth-child(5) {
+  transition: all 500ms 875ms;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  opacity: 0;
+  background-color: transparent;
+  transform: rotate(-45deg);
+}
+.modal-close:before, .modal-close:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 15px;
+  height: 3px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.modal-close:after {
+  width: 3px;
+  height: 15px;
+}
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/**
+Modal Boder css animation -- Start
+**/
+
+
+/*
+button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #f45e61;
+  color: #f45e61;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+}
+button::before, button::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+*/
+.draw {
+  transition: color 0.25s;
+  color: #60daaa;
+}
+.draw::before, .draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  color: #60daaa;
+}
+
+.draw:hover::before, .draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+.meet:hover {
+  color: #fbca67;
+}
+.meet::after {
+  top: 0;
+  left: 0;
+}
+.meet:hover::before {
+  border-top-color: #fbca67;
+  border-right-color: #fbca67;
+}
+.meet:hover::after {
+  border-bottom-color: #fbca67;
+  border-left-color: #fbca67;
+  transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+}
+
+.center:hover {
+  color: #6477b9;
+}
+.center::before, .center::after {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+}
+.center::before {
+  border-top: 2px solid #6477b9;
+  border-bottom: 2px solid #6477b9;
+  transform: scale3d(0, 1, 1);
+}
+.center::after {
+  border-left: 2px solid #6477b9;
+  border-right: 2px solid #6477b9;
+  transform: scale3d(1, 0, 1);
+}
+.center:hover::before, .center:hover::after {
+  transform: scale3d(1, 1, 1);
+  transition: transform 0.5s;
+}
+
+/**
+Modal Boder css animation -- End
+**/
